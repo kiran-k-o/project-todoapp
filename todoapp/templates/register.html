@@ -1,0 +1,73 @@
+  {% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+<style>
+    .form-container {
+        width: 550px;
+        padding: 60px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Adding a shadow effect */
+        background-color: #f9f9f9; /* Background color for the box */
+        margin: 60px auto; /* Center the box horizontally */
+        text-align: center; /* Center the form content */
+    }
+
+    /* Style the form elements within the box */
+    .form-group {
+        margin-bottom: 60px ;
+    }
+
+    /* Style the submit button */
+    .btn-primary {
+        background-color: #4CAF50; /* Set your desired button background color */
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #45a049; /* Darken the background color on hover */
+    }
+</style>
+
+
+
+
+    <div class="form-container">
+        <h2 class="mb-4 text-center">Register</h2>
+        <form method='POST'>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_username">{{ form.username.label }}</label>
+                {{ form.username }}
+            </div>
+            <div class="form-group">
+                <label for="id_password1">{{ form.password1.label }}</label>
+                {{ form.password1 }}
+            </div>
+            <div class="form-group">
+                <label for="id_password2">{{ form.password2.label }}</label>
+                {{ form.password2 }}
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (Popper.js and jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    {% include 'footer.html' %}
+
+</body>
+</html>
